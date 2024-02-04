@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24 w-screen">
       <Logo />
-      <Link href="pages/list">
+      <Link href="/">
         {" "}
         <Button />
       </Link>
