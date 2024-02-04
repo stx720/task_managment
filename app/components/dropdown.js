@@ -17,11 +17,11 @@ const ExpandableInfo = () => {
 
   return (
     <div className="flex justify-center items-center flex-col  ">
-      <h1 className="text-xl lg:text-3xl mt-16 mb-2 font-custom text-black w-screen text-center cursor-default ">
+      <h1 className="text-xl lg:text-3xl mt-16 mb-4 font-custom  text-black w-screen text-center cursor-default ">
         What is this?
       </h1>
       <button
-        className="flex justify-center items-center flex-col bg-gray-300 hover:bg-gray-600 min-h-max mb-5  p-3 rounded-3xl min-w-max cursor-pointer focus:bg-gray-600 min-h-max mb-5  p-3 rounded-3xl min-w-max"
+        className="flex justify-center items-center flex-col min-h-max mb-9  p-3 rounded-3xl min-w-max bg-gray-300 hover:bg-gray-600  cursor-pointer focus:bg-gray-600"
         onClick={toggleExpand}
       >
         <Image
@@ -35,9 +35,9 @@ const ExpandableInfo = () => {
       {isExpanded && (
         <animated.div
           style={springProps}
-          className="w-64 lg:w-1/2 text-base lg:text-lg"
+          className="w-64 lg:w-1/2 text-base lg:text-xl"
         >
-          <p className="">
+          <p className="font-medium">
             The Task List app is an intuitive tool designed to efficiently
             manage your to-do items. It allows users to create, edit, and delete
             task lists, as well as add, update, and remove individual tasks
