@@ -17,6 +17,8 @@ module.exports = {
       },
       animation:{
         'shake': 'shake 2.5s both infinite',
+          'fade': 'fadeIn .9s ease-in-out',
+        
     },
     keyframes: {
         'shake' : {
@@ -26,7 +28,12 @@ module.exports = {
         '50%': {
             transform: 'translateX(6px)',
         }
-        }
+        
+        },
+        'fadeIn': {
+					from: { opacity: 0 },
+					to: { opacity: 1 },
+				},
 },
     },
   },

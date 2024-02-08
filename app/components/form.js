@@ -1,21 +1,21 @@
 const Form = () => {
   return (
-    <div className="mt-10 border-dashed border-gray-500 border-4 border-opacity-100 flex flex-col justify-center lg:min-h-72 h-80  lg:w-5/12 w-fit rounded-lg bg-gradient-to-r bg-gray-300 p-1 ">
+    <div className="mt-10 border-dashed border-gray-500 border-2 border-opacity-100 flex flex-col justify-center lg:min-h-72 h-80  lg:w-5/12 w-fit rounded-lg bg-gradient-to-r bg-gray-300 p-1 ">
       <form className="flex flex-col items-center justify-center">
-        <h1 className=" text-center font-custom lg:text-3xl text-xl mb-5">
+        <h1 className=" text-center font-custom lg:text-3xl text-xl mb-5 animate-pulse">
           You need to log in
         </h1>
         <input
           type="email"
           placeholder="e-mail"
           required
-          className="mb-4 pl-1 scale-125 rounded-md outline-none border-gray-500 border placeholder:focus:opacity-25  "
+          className="mb-4 pl-1 scale-125 rounded-xl p-1 outline-none border-gray-500 placeholder:focus:opacity-25  "
         />
         <input
           type="password"
           placeholder="password"
           required
-          className="mb-4 pl-1 rounded-md scale-125 border border-gray-500 placeholder:focus:opacity-25"
+          className="mb-4 pl-1 rounded-xl p-1 scale-125 border-gray-500 placeholder:focus:opacity-25"
         />
         <button
           type="submit"
