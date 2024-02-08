@@ -3,3 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-input-placeholder {
+    transition: opacity 0.5s;
+  }
+  ::-moz-placeholder {
+    transition: opacity 0.5s;
+  }
+  :-ms-input-placeholder {
+    transition: opacity 0.5s;
+  }
+  .fade::-webkit-input-placeholder {
+    opacity: 0;
+  }
+  .fade::-moz-placeholder {
+    opacity: 0;
+  }
+  .fade:-ms-input-placeholder {
+    opacity: 0;
+  }
+
