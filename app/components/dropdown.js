@@ -35,7 +35,7 @@ const ExpandableInfo = () => {
       {isExpanded && (
         <animated.div
           style={springProps}
-          className="w-64 lg:w-1/2 text-base lg:text-xl"
+          className="w-64 lg:w-1/2 text-base lg:text-2xl"
         >
           <p className="font-medium">
             The Task List app is an intuitive tool designed to efficiently
