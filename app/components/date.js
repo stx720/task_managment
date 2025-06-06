@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { format, addDays, parseISO } from "date-fns";
-import { en } from "date-fns/locale";
+import enUS from "date-fns/locale/en-US";
 
 const Dates = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -26,7 +26,7 @@ const Dates = () => {
           ←
         </button>
         <span className="text-xl font-semibold">
-          {format(selectedDate, "EEEE, d MMMM yyyy", { locale: en })}
+          {format(selectedDate, "EEEE, d MMMM yyyy", { locale: enUS })}
         </span>
         <button onClick={nextDay} className="text-xl px-2 animate-shake ml-2">
           →
