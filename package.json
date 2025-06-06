@@ -16,7 +16,6 @@
     "react": "^18",
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18",
-    "react-hover-animation": "^2.1.1",
     "react-spring": "^9.7.3"
   },
   "devDependencies": {
