@@ -21,13 +21,13 @@ const Dates = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-4">
+    <div className="mx-auto p-4">
       {/* Nawigacja po dniach */}
-      <div className="flex items-center justify-center font-custom mt-6 w-max">
+      <div className="flex items-center justify-center font-custom mt-6 ">
         <button onClick={prevDay} className="text-xl px-2 animate-shake mr-2">
           ←
         </button>
-        <span className="text-xl font-semibold">
+        <span className="lg:text-2xl text-xs font-semibold ">
           {format(selectedDate, "EEEE, d MMMM yyyy", { locale: enUS })}
         </span>
         <button onClick={nextDay} className="text-xl px-2 animate-shake ml-2">
@@ -50,7 +50,7 @@ const Dates = () => {
             damping: 12,
             mass: 0.4,
           }}
-          className="text-base text-slate-950 px-3 py-1 border rounded-xl bg-gray-200 hover:bg-gray-300 font-custom font-medium transition-shadow duration-300 shadow-md hover:shadow-xl"
+          className="lg:text-base text-sm text-slate-950 px-3 py-1 border rounded-xl bg-gray-200 hover:bg-gray-300 font-custom font-medium transition-shadow duration-300 shadow-md hover:shadow-xl"
         >
           Pick date
         </motion.button>
@@ -72,7 +72,7 @@ const Dates = () => {
           >
             <input
               type="date"
-              className="border-2 border-gray-950 px-2  py-1 rounded font-custom font-semibold text-gray-700"
+              className="border-2 border-gray-950 px-2  py-1 rounded font-custom font-semibold text-gray-700 w-fit text-sm lg:text-base"
               value={format(selectedDate, "yyyy-MM-dd")}
               onChange={handleDateChange}
             />
