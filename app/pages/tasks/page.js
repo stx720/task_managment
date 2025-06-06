@@ -7,9 +7,8 @@ import Dates from "../../components/date";
 export default function Login() {
   return (
     <main className="flex min-h-screen flex-col items-center lg:p-24 w-screen animate-fade ">
-      
-      <SmallLogo/>
-      <Dates/>
+      <SmallLogo />
+      <Dates />
       <Github />
     </main>
   );

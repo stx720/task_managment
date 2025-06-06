@@ -23,7 +23,7 @@ const Dates = () => {
   return (
     <div className="max-w-xl mx-auto p-4">
       {/* Nawigacja po dniach */}
-      <div className="flex items-center justify-center font-custom mt-6">
+      <div className="flex items-center justify-center font-custom mt-6 w-max">
         <button onClick={prevDay} className="text-xl px-2 animate-shake mr-2">
           ←
         </button>
