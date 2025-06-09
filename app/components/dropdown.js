@@ -51,7 +51,7 @@ const ExpandableInfo = () => {
           onClick={toggleExpand}
           whileTap={{ scale: 1.3 }}
           whileHover={{ scale: 1.1, boxShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
-          className="flex justify-center items-center flex-col min-h-max mb-9 p-3 rounded-3xl min-w-max bg-gray-300 hover:bg-gray-500"
+          className="flex justify-center items-center flex-col min-h-max mb-9 p-3 rounded-3xl min-w-max bg-gray-300 hover:bg-gray-400"
         >
           <motion.div
             animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -79,7 +79,7 @@ const ExpandableInfo = () => {
             animate="expanded"
             exit="collapsed"
             variants={variants}
-            className="w-64 lg:w-1/2 overflow-hidden text-base lg:text-2xl"
+            className="w-64 lg:w-4/6 overflow-hidden text-base lg:text-2xl"
           >
             <p className="font-medium">
               The Task List app is a calendar-based tool designed to help you
