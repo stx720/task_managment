@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Github from "../../components/github";
+import Github from "../components/github";
 
 // --- Components ---
 

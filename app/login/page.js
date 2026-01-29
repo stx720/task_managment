@@ -1,7 +1,7 @@
-import Form from "../../components/form";
-import Github from "../../components/github";
-import Logo from "../../components/home-logo";
-import AnimatedComponent from "../../components/animated";
+import Form from "../components/form";
+import Github from "../components/github";
+import Logo from "../components/home-logo";
+import AnimatedComponent from "../components/animated";
 
 export default function Login() {
   return (

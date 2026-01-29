@@ -26,12 +26,12 @@ export default function Home() {
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
         {/* Primary CTA - Main App Focus */}
-        <Link href="pages/tasks">
+        <Link href="/tasks">
           <Button text="Get Started" />
         </Link>
 
         {/* Secondary - Bonus Feature */}
-        <Link href="pages/notes">
+        <Link href="/notes">
           <motion.button
             className="group flex items-center gap-3 px-6 py-3 rounded-2xl text-gray-500 hover:text-black transition-all hover:bg-white/80 backdrop-blur-sm border border-transparent hover:border-gray-200 hover:shadow-lg"
             whileHover={{ scale: 1.02, y: -2 }}
