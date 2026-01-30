@@ -7,13 +7,13 @@ const Button = () => {
       whileHover={{
         scale: 1.03,
         boxShadow: "6px 6px 0px rgba(0,0,0,1)",
-        y: -2
+        y: -2,
       }}
       whileTap={{
         scale: 0.97,
         x: 3,
         y: 3,
-        boxShadow: "0px 0px 0px rgba(0,0,0,1)"
+        boxShadow: "0px 0px 0px rgba(0,0,0,1)",
       }}
       className="
         flex items-center gap-3 mt-4 sm:mt-8

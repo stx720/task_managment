@@ -27,7 +27,6 @@ const Dates = () => {
     <div className="mx-auto p-4 w-full max-w-lg">
       {/* Date Navigation Bar */}
       <div className="flex items-center justify-between gap-4 mt-6">
-
         {/* Previous Day Button */}
         <motion.button
           whileHover={{ scale: 1.1, x: -2, backgroundColor: "#f8fafc" }}
@@ -36,7 +35,19 @@ const Dates = () => {
           className="p-3 rounded-full bg-white border-2 border-slate-200 hover:border-slate-400 shadow-sm text-slate-600 hover:text-slate-900 transition-colors"
           aria-label="Previous day"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
         </motion.button>
 
         {/* Central Date Card (Trigger) */}
@@ -45,31 +56,65 @@ const Dates = () => {
           onClick={() => setShowDatePicker(!showDatePicker)}
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
-          className={`group flex-1 relative flex flex-col items-center justify-center p-4 rounded-2xl border-2 transition-all duration-300 ${showDatePicker
-            ? "bg-slate-900 border-slate-900 shadow-xl"
-            : "bg-white border-slate-200 hover:border-slate-400 shadow-[0_4px_0_0_rgba(203,213,225,0.5)] active:shadow-none active:translate-y-[4px]"
-            }`}
+          className={`group flex-1 relative flex flex-col items-center justify-center p-4 rounded-2xl border-2 transition-all duration-300 ${
+            showDatePicker
+              ? "bg-slate-900 border-slate-900 shadow-xl"
+              : "bg-white border-slate-200 hover:border-slate-400 shadow-[0_4px_0_0_rgba(203,213,225,0.5)] active:shadow-none active:translate-y-[4px]"
+          }`}
         >
-          <div className={`flex items-center gap-2 mb-1 transition-colors ${showDatePicker ? "text-slate-400" : "text-slate-500 group-hover:text-slate-700"
-            }`}>
+          <div
+            className={`flex items-center gap-2 mb-1 transition-colors ${
+              showDatePicker
+                ? "text-slate-400"
+                : "text-slate-500 group-hover:text-slate-700"
+            }`}
+          >
             <span className="text-xs font-bold uppercase tracking-widest">
               {showDatePicker ? "Select a date" : "Selected Date"}
             </span>
             {/* Edit Icon Hint */}
             {!showDatePicker && (
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 group-hover:opacity-100"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /><path d="m9 16 2 2 4-4" /></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="opacity-50 group-hover:opacity-100"
+              >
+                <path d="M8 2v4" />
+                <path d="M16 2v4" />
+                <rect width="18" height="18" x="3" y="4" rx="2" />
+                <path d="M3 10h18" />
+                <path d="m9 16 2 2 4-4" />
+              </svg>
             )}
           </div>
 
           <div className="flex items-center gap-2">
-            <span className={`text-lg lg:text-xl font-bold font-custom tracking-tight transition-colors ${showDatePicker ? "text-white" : "text-slate-900"
-              }`}>
+            <span
+              className={`text-lg lg:text-xl font-bold font-custom tracking-tight transition-colors ${
+                showDatePicker ? "text-white" : "text-slate-900"
+              }`}
+            >
               {format(selectedDate, "EEE, d MMM", { locale: enUS })}
             </span>
             {/* Chevron Down to indicate dropdown */}
             <motion.svg
               animate={{ rotate: showDatePicker ? 180 : 0 }}
-              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className={`transition-colors ${showDatePicker ? "text-white" : "text-slate-400 group-hover:text-slate-800"}`}
             >
               <path d="m6 9 6 6 6-6" />
@@ -85,7 +130,19 @@ const Dates = () => {
           className="p-3 rounded-full bg-white border-2 border-slate-200 hover:border-slate-400 shadow-sm text-slate-600 hover:text-slate-900 transition-colors"
           aria-label="Next day"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
         </motion.button>
       </div>
 
