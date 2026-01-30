@@ -71,7 +71,7 @@ const StaticInfo = () => {
                     {item.icon}
                   </svg>
                 </div>
-                <span className="font-pixel text-[8px] sm:text-[9px] uppercase text-black tracking-wider whitespace-nowrap">
+                <span className="font-pixel text-[10px] sm:text-[11px] uppercase text-black font-bold tracking-widest whitespace-nowrap">
                   {item.label}
                 </span>
               </motion.div>
