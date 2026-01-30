@@ -19,18 +19,18 @@ const Logo = () => {
         whileHover={{ backgroundColor: "rgba(0,0,0,0.02)" }}
       >
         <div className="flex flex-row flex-nowrap justify-center items-center gap-x-0.5 sm:gap-x-2 overflow-visible relative">
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>T</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>A</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>S</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>K</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>_</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>L</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>I</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>S</motion.h1>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>T</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>T</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>A</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>S</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>K</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>_</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>L</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>I</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>S</motion.h1>
+          <motion.h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold sm:font-normal inline-block tracking-tighter sm:tracking-normal" whileHover={{ scale: 1.2, y: -5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>T</motion.h1>
         </div>
 
-        <div className="h-8 flex justify-center items-center">
+        <div className="h-4 sm:h-8 flex justify-center items-center">
           <AnimatePresence>
             {isHovered && (
               <motion.div

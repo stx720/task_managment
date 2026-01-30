@@ -24,25 +24,27 @@ const Dates = () => {
   };
 
   return (
-    <div className="mx-auto p-4 w-full max-w-lg">
+    <div className="mx-auto p-6 w-full max-w-lg relative">
       {/* Date Navigation Bar */}
-      <div className="flex items-center justify-between gap-4 mt-6">
+      <div className="flex items-center justify-between gap-3 sm:gap-6 mt-4 sm:mt-8 relative z-10">
         {/* Previous Day Button */}
         <motion.button
-          whileHover={{ scale: 1.1, x: -2, backgroundColor: "#f8fafc" }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05, boxShadow: "6px 6px 0px rgba(0,0,0,1)", y: -4 }}
+          whileTap={{ scale: 0.95, x: 4, y: 4, boxShadow: "0px 0px 0px rgba(0,0,0,1)" }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
           onClick={() => changeDay(-1)}
-          className="p-3 rounded-full bg-white border-2 border-slate-200 hover:border-slate-400 shadow-sm text-slate-600 hover:text-slate-900 transition-colors"
+          className="p-3 sm:p-4 rounded-2xl bg-white border-4 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)]"
           aria-label="Previous day"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
+            className="sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
+            stroke="black"
+            strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
@@ -54,90 +56,62 @@ const Dates = () => {
         <motion.button
           layout
           onClick={() => setShowDatePicker(!showDatePicker)}
-          whileHover={{ scale: 1.02, y: -2 }}
+          whileHover={{ scale: 1.02, y: -2, boxShadow: "10px 10px 0px rgba(0,0,0,1)" }}
           whileTap={{ scale: 0.98 }}
-          className={`group flex-1 relative flex flex-col items-center justify-center p-4 rounded-2xl border-2 transition-all duration-300 ${
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          className={`group flex-[2] relative flex flex-col items-center justify-center py-4 px-2 sm:p-5 rounded-[2rem] border-4 border-black min-w-0 ${
             showDatePicker
-              ? "bg-slate-900 border-slate-900 shadow-xl"
-              : "bg-white border-slate-200 hover:border-slate-400 shadow-[0_4px_0_0_rgba(203,213,225,0.5)] active:shadow-none active:translate-y-[4px]"
+              ? "bg-black text-white shadow-none translate-x-1 translate-y-1"
+              : "bg-white text-black shadow-[8px_8px_0px_rgba(0,0,0,1)]"
           }`}
         >
-          <div
-            className={`flex items-center gap-2 mb-1 transition-colors ${
-              showDatePicker
-                ? "text-slate-400"
-                : "text-slate-500 group-hover:text-slate-700"
-            }`}
-          >
-            <span className="text-xs font-bold uppercase tracking-widest">
-              {showDatePicker ? "Select a date" : "Selected Date"}
+          <div className="flex items-center gap-2 mb-1 opacity-60">
+            <span className="text-[7px] sm:text-[10px] font-pixel uppercase tracking-[0.2em] whitespace-nowrap">
+              {showDatePicker ? "Select" : "Date"}
             </span>
-            {/* Edit Icon Hint */}
-            {!showDatePicker && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="opacity-50 group-hover:opacity-100"
-              >
-                <path d="M8 2v4" />
-                <path d="M16 2v4" />
-                <rect width="18" height="18" x="3" y="4" rx="2" />
-                <path d="M3 10h18" />
-                <path d="m9 16 2 2 4-4" />
-              </svg>
-            )}
           </div>
 
-          <div className="flex items-center gap-2">
-            <span
-              className={`text-lg lg:text-xl font-bold font-custom tracking-tight transition-colors ${
-                showDatePicker ? "text-white" : "text-slate-900"
-              }`}
-            >
+          <div className="flex items-center gap-1.5 sm:gap-3 w-full justify-center px-1">
+            <span className="text-xs sm:text-sm lg:text-base font-pixel tracking-tighter sm:tracking-tight uppercase whitespace-nowrap">
               {format(selectedDate, "EEE, d MMM", { locale: enUS })}
             </span>
-            {/* Chevron Down to indicate dropdown */}
-            <motion.svg
+            <motion.div
               animate={{ rotate: showDatePicker ? 180 : 0 }}
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`transition-colors ${showDatePicker ? "text-white" : "text-slate-400 group-hover:text-slate-800"}`}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="flex-shrink-0"
             >
-              <path d="m6 9 6 6 6-6" />
-            </motion.svg>
+              <svg 
+                width="14" 
+                height="14" 
+                className="sm:w-4 sm:h-4 flex-shrink-0"
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter"/>
+              </svg>
+            </motion.div>
           </div>
         </motion.button>
 
         {/* Next Day Button */}
         <motion.button
-          whileHover={{ scale: 1.1, x: 2, backgroundColor: "#f8fafc" }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05, boxShadow: "6px 6px 0px rgba(0,0,0,1)", y: -4 }}
+          whileTap={{ scale: 0.95, x: 4, y: 4, boxShadow: "0px 0px 0px rgba(0,0,0,1)" }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
           onClick={() => changeDay(1)}
-          className="p-3 rounded-full bg-white border-2 border-slate-200 hover:border-slate-400 shadow-sm text-slate-600 hover:text-slate-900 transition-colors"
+          className="p-3 sm:p-4 rounded-2xl bg-white border-4 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)]"
           aria-label="Next day"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
+            className="sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
+            stroke="black"
+            strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
@@ -150,17 +124,38 @@ const Dates = () => {
       <AnimatePresence>
         {showDatePicker && (
           <motion.div
-            initial={{ height: 0, opacity: 0, y: -10 }}
-            animate={{ height: "auto", opacity: 1, y: 0 }}
-            exit={{ height: 0, opacity: 0, y: -10 }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="overflow-hidden mx-auto w-fit"
+            initial={{ height: 0, opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ height: "auto", opacity: 1, y: 0, scale: 1 }}
+            exit={{ height: 0, opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="overflow-hidden mx-auto w-fit z-0"
           >
-            <div className="pt-4 pb-2">
-              <div className="bg-white p-2 rounded-xl border border-gray-200 shadow-lg">
+            <div className="pt-4 pb-2 px-2">
+              <div className="bg-white p-2.5 rounded-[1.5rem] border-[3px] border-black shadow-[6px_6px_0px_rgba(0,0,0,1)] relative flex items-center px-4">
+                <div className="text-black opacity-80 pointer-events-none flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                  >
+                    <rect width="18" height="18" x="3" y="4" rx="1" />
+                    <path d="M3 10h18" />
+                    <path d="M8 2v4" />
+                    <path d="M16 2v4" />
+                    <rect width="2" height="2" x="7" y="14" />
+                    <rect width="2" height="2" x="11" y="14" />
+                    <rect width="2" height="2" x="15" y="14" />
+                  </svg>
+                </div>
                 <input
                   type="date"
-                  className="p-2 rounded-lg font-custom text-slate-700 outline-none cursor-pointer"
+                  className="p-2 font-pixel text-[11px] text-black outline-none cursor-pointer bg-transparent transition-colors uppercase w-full text-center appearance-none pl-2"
                   value={format(selectedDate, "yyyy-MM-dd")}
                   onChange={handleDateChange}
                 />

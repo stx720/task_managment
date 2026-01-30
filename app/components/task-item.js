@@ -12,7 +12,7 @@ const TaskItem = ({ task, onToggle, onDelete }) => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className={`group relative flex flex-col p-4 rounded-xl border-2 transition-all duration-200 ${
+      className={`group relative flex flex-col p-4 rounded-xl border-2 ${
         task.done
           ? "bg-gray-50 border-gray-200 opacity-75"
           : "bg-white border-gray-900 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:-translate-y-[1px]"
@@ -65,11 +65,11 @@ const TaskItem = ({ task, onToggle, onDelete }) => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  strokeWidth="4"
+                  strokeLinecap="square"
+                  strokeLinejoin="miter"
                 >
-                  <path d="m6 9 6 6 6-6" />
+                  <path d="M7 10l5 5 5-5" />
                 </svg>
               </motion.button>
             )}
@@ -77,10 +77,11 @@ const TaskItem = ({ task, onToggle, onDelete }) => {
         </div>
 
         <motion.button
-          whileHover={{ scale: 1.1, color: "#dc2626" }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.15, color: "#ef4444" }}
+          whileTap={{ scale: 0.9, rotate: -10 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
           onClick={() => onDelete(task.id)}
-          className="text-gray-400 hover:text-red-600 transition-colors p-1"
+          className="text-black p-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,15 +90,11 @@ const TaskItem = ({ task, onToggle, onDelete }) => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            strokeWidth="3"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
           >
-            <path d="M3 6h18" />
-            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-            <line x1="10" x2="10" y1="11" y2="17" />
-            <line x1="14" x2="14" y1="11" y2="17" />
+            <path d="M3 6h18M19 6v14H5V6M8 6V4h8v2M10 11v6M14 11v6" />
           </svg>
         </motion.button>
       </div>

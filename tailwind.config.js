@@ -38,11 +38,15 @@ module.exports = {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+        'shimmer': {
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         'shake': 'shake 2.5s both infinite',
         'fade': 'fadeIn .9s ease-in-out',
         'chroma': 'chroma 4s linear infinite',
+        'shimmer': 'shimmer 1.5s infinite',
       },
     },
   },

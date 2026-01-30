@@ -9,9 +9,18 @@ import Github from "./components/github";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-6 lg:p-24 w-screen animate-fade overflow-x-hidden bg-gradient-to-b from-white to-gray-50/30">
+    <main className="relative flex min-h-screen flex-col items-center px-4 py-8 lg:p-24 w-screen animate-fade overflow-x-hidden bg-[#fafafa]">
+      {/* Premium Retro Background Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, #000 2px, transparent 0)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80 pointer-events-none" />
       <motion.div
-        className="mt-12 lg:mt-0"
+        className="mt-6 lg:mt-0"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -33,19 +42,20 @@ export default function Home() {
         {/* Secondary - Bonus Feature */}
         <Link href="/notes">
           <motion.button
-            className="group flex items-center gap-3 px-6 py-3 rounded-2xl text-gray-500 hover:text-black transition-all hover:bg-white/80 backdrop-blur-sm border border-transparent hover:border-gray-200 hover:shadow-lg"
-            whileHover={{ scale: 1.02, y: -2 }}
+            className="group flex items-center gap-2 px-4 py-2.5 sm:px-6 sm:py-4 bg-white text-black border-4 border-black shadow-[3px_3px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all rounded-2xl"
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <motion.div
-              className="bg-gray-200 text-gray-600 p-2 rounded-xl group-hover:bg-black group-hover:text-white transition-all duration-300"
-              whileHover={{ rotate: [0, -5, 5, 0] }}
-              transition={{ duration: 0.5 }}
+              className="bg-gray-100 p-1.5 sm:p-2 border-[3px] border-black rounded-xl group-hover:bg-black group-hover:text-white transition-all duration-300 shadow-[2px_2px_0px_rgba(0,0,0,1)] group-hover:shadow-none"
+              whileHover={{ rotate: [0, -10, 10, 0] }}
+              transition={{ duration: 0.5, ease: "linear" }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="14"
+                height="14"
+                className="sm:w-4 sm:h-4"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -57,10 +67,9 @@ export default function Home() {
                 <polyline points="14 2 14 8 20 8" />
                 <line x1="16" y1="13" x2="8" y2="13" />
                 <line x1="16" y1="17" x2="8" y2="17" />
-                <polyline points="10 9 9 9 8 9" />
               </svg>
             </motion.div>
-            <span className="font-custom text-sm font-bold tracking-wide">
+            <span className="font-pixel text-[8px] sm:text-[10px] uppercase tracking-[0.1em]">
               Open Notebook
             </span>
           </motion.button>
