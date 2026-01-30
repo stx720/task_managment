@@ -114,6 +114,7 @@ const DailyTasks = ({ currentDate }) => {
     const [newDescription, setNewDescription] = useState("");
     const [showDesc, setShowDesc] = useState(false);
     const [placeholderIndex, setPlaceholderIndex] = useState(0);
+    const [error, setError] = useState(null);
 
     const key = `tasks_${format(currentDate, "yyyy-MM-dd")}`;
 
@@ -146,7 +147,11 @@ const DailyTasks = ({ currentDate }) => {
 
     const add = (e) => {
         e.preventDefault();
-        if (!newTitle.trim()) return;
+        if (!newTitle.trim()) {
+            setError("Give your task a title first!");
+            setTimeout(() => setError(null), 3000);
+            return;
+        }
 
         update([...tasks, {
             id: Date.now(),
@@ -158,6 +163,7 @@ const DailyTasks = ({ currentDate }) => {
         setNewTitle("");
         setNewDescription("");
         setShowDesc(false);
+        setError(null);
     };
 
     const toggle = (id) => {
@@ -173,6 +179,8 @@ const DailyTasks = ({ currentDate }) => {
             <motion.form
                 layout
                 onSubmit={add}
+                animate={error ? { x: [-10, 10, -10, 10, 0] } : {}}
+                transition={{ duration: 0.4 }}
                 className="mb-10 bg-white p-1 rounded-2xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden relative"
             >
                 <div className="flex items-start px-4 py-3 relative gap-2">
@@ -264,6 +272,22 @@ const DailyTasks = ({ currentDate }) => {
                     )}
                 </AnimatePresence>
             </motion.div>
+
+            <AnimatePresence>
+                {error && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20, x: "-50%" }}
+                        animate={{ opacity: 1, y: 0, x: "-50%" }}
+                        exit={{ opacity: 0, y: 10, x: "-50%" }}
+                        className="fixed bottom-10 left-1/2 z-[100] w-[90%] max-w-[320px] bg-black/90 backdrop-blur-md text-white px-5 py-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-center justify-center gap-3 border border-white/10"
+                    >
+                        <div className="bg-red-500/20 p-1.5 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+                        </div>
+                        <span className="font-custom text-[11px] uppercase tracking-[0.1em] font-bold text-gray-200">{error}</span>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div >
     );
 };
